@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/robelyemane
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://robelyemane.com
+  * I am robelyemane (https://keybase.io/robelyemane) on keybase.
+  * I have a public key ASAtKGyrSB4-NWyUc6VWCVcDDDes-wVp_fpGieX6IIxgmgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202eb73be619ccda83bffd04f45b1bf46c7966775d2f23d6f493acc383d83f306d0a",
+      "host": "keybase.io",
+      "kid": "01202d286cab481e3e356c9473a5560957030c37acfb0569fdfa4689e5fa208c609a0a",
+      "uid": "e261135f923cab84c092c6aed65d9619",
+      "username": "robelyemane"
+    },
+    "merkle_root": {
+      "ctime": 1591113353,
+      "hash": "4546de7c32b9accdfa97517e622aed77fb8e3355b44a40c1acf466a149dbc970a0fedd46de292ec6c665a9d5527b84fffe581e1674069145f637e328c32c3941",
+      "hash_meta": "36a8b5cd7803f63c7dfb0ad51c72681758cea8246bdb2178460288c2907fdc24",
+      "seqno": 16494942
+    },
+    "service": {
+      "entropy": "nmY3z49nF7NG7bwvKfEZ0pdY",
+      "hostname": "robelyemane.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1591113393,
+  "expire_in": 504576000,
+  "prev": "152d7e10b69d65070dc01cb6622d42e66217e5a4ebe10e22a174233925a87abc",
+  "seqno": 23,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgLShsq0gePjVslHOlVglXAww3rPsFaf36Ronl+iCMYJoKp3BheWxvYWTESpcCF8QgFS1+ELadZQcNwBy2Yi1C5mIX5aTr4Q4ioXQjOSWoerzEIN+tguxDMpOs3zaeYsNgM2bT72Wc29OeLulTqY49BfSrAgHCo3NpZ8RAWa5dUSSKf1BPalxznGukQ4QrM8KJqnhyKV9Q+CNS1GfW2gTu+ECucrCGkeVr9MjK7SKgQAfeW61wTDouis+TCKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHlmqgriuFS8b3Rnb0AbrlBUbpRdW0q8Z85dQkb8g69zo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/robelyemane
+
+==================================================================
