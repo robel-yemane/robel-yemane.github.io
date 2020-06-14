@@ -1,0 +1,23 @@
+body {
+   /* background-image: url("../images/cw.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;*/
+    font-size: 15px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #d1eff0;
+    padding: 0 20%;
+    max-width: 32.5em; /*800px;*/
+}
+
+.header {
+    font-size: 150%;
+    color: darkblue;
+    border-bottom: solid #32a1ce;
+}
+
+
+#main {
+    line-height: 1.5em;
+    margin: 30px;
+}
