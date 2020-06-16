@@ -1,19 +1,21 @@
 body {
-   /* background-image: url("../images/cw.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;*/
-    font-size: 15px;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    background-color: #d1eff0;
-    padding: 0 20%;
-    max-width: 32.5em; /*800px;*/
+   font-size: 15px;
+    font-family:  Verdana, Arial, Helvetica, sans-serif;
+    background-color: #e6e6e6; 
+    max-width: 40em; 
+	margin:0 auto;
+	padding:5px;
+	font-size:18px;
+	line-height:1.6em;
+
 }
 
-.header {
+#header {
+    font-family: Papyrus;
     font-size: 150%;
     color: darkblue;
-    border-bottom: solid #32a1ce;
+    border-bottom: thin dotted #32a1ce;
+    text-align: center;    
 }
 
 
@@ -21,3 +23,38 @@ body {
     line-height: 1.5em;
     margin: 30px;
 }
+
+a:link {
+    color: #447888;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #447888;
+}
+
+a:hover {
+    color: #447888;
+    text-decoration: underline;
+}
+a:focus {
+    color: #447888;
+    text-decoration: underline;
+}
+a:active {
+    color: #447888;
+    text-decoration: underline;
+}
+
+#contact li {
+    display: inline;    
+    padding: 0 15px;
+    
+}
+#contact {
+   justify-content: center;
+    margin: 0 auto;
+    display: flex;
+   
+}
+
