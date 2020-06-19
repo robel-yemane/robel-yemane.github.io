@@ -1,13 +1,19 @@
 body {
     
-    font-family:  Verdana, Arial, Helvetica, sans-serif;
+    font-family:  "Andale mono", Lucida Console, Courier, monospace; /*Verdana, Arial, Helvetica, sans-serif;*/
     background-color: #e6e6e6; 
     max-width: 40em; 
 	margin:0 auto;
-	padding:5px;
+	padding:50px;
 	font-size:18px;
 	line-height:1.6em;
+    
 
+}
+h2{
+    color: darkblue;
+    font-size: 120%;
+    
 }
 
 #header {
@@ -19,10 +25,25 @@ body {
     
 }
 
+#menu li {
+    
+    display: inline;    
+    padding: 0 10px;
+    
+   
+}
+#menu {
+   
+   justify-content:  center; 
+    margin: 0 auto;
+    display: table;    
+   
+}
 
 #aboutme {
     
     margin: 30px;
+    padding-top:30px;
     line-height: 1.9;
 }
 
