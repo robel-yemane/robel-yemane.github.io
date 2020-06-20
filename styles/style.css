@@ -13,6 +13,8 @@ body {
 h2{
     color: darkblue;
     font-size: 120%;
+    margin-top: 1.8em;
+    margin-bottom: 2em;
     
 }
 
@@ -43,7 +45,7 @@ h2{
 #aboutme {
     
     margin: 30px;
-    padding-top:30px;
+    
     line-height: 1.9;
 }
 
