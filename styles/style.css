@@ -1,6 +1,7 @@
 body {
     
-    font-family:  "Andale mono", Lucida Console, Courier, monospace; /*Verdana, Arial, Helvetica, sans-serif;*/
+    font-family:  Verdana, Arial, Helvetica, sans-serif; /*"Andale mono",
+Lucida Console, Courier, monospace; */
     background-color: #e6e6e6; 
     max-width: 40em; 
 	margin:0 auto;
@@ -12,9 +13,9 @@ body {
 }
 h2{
     color: darkblue;
-    font-size: 120%;
-    margin-top: 1.5em;
-    margin-bottom: 2em;
+    font-size: 150%;
+    margin: 1.2em 0;
+ 
     
 }
 
@@ -43,10 +44,8 @@ h2{
 }
 
 #aboutme {
-    
     margin: 30px;
-    
-    line-height: 1.9;
+    line-height: 1.5;
 }
 
 #contact li {
