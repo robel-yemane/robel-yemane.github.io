@@ -66,9 +66,10 @@ h2{
 #header a {
     color: darkblue;
 }
-#subtitle {
+#subtitle, #nowupdate{
     font-size: 80%;
 }
+    
 a:link {
     color: #447888;
     text-decoration: none;
