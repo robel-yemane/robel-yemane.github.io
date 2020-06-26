@@ -1,0 +1,96 @@
+body {
+    
+    font-family:  Verdana, Arial, Helvetica, sans-serif; /*"Andale mono",
+Lucida Console, Courier, monospace; */
+    background-color: #e6e6e6; 
+    max-width: 40em; 
+	margin:0 auto;
+	padding:50px;
+	font-size:18px;
+	line-height:1.6em;
+    
+
+}
+h2{
+    color: darkblue;
+    font-size: 150%;
+    margin: 1.2em 0;
+ 
+    
+}
+
+#header {
+    font-family: Papyrus;
+    font-size: 150%;
+    color: darkblue;
+    border-bottom: thin dotted #32a1ce;
+    text-align: center;
+    
+}
+
+#menu li {
+    
+    display: inline;    
+    padding: 0 10px;
+    
+   
+}
+#menu {
+   
+   justify-content:  center; 
+    margin: 0 auto;
+    display: table;    
+   
+}
+
+#aboutme {
+    margin: 30px;
+    line-height: 1.5;
+}
+
+#contact li {
+    
+      display: inline;    
+    padding: 0 10px;
+    
+   
+}
+#contact {
+   
+   /*justify-content:  center;*/ 
+    margin: 0 auto;
+    display: table;    
+   
+}
+
+#header a {
+    color: darkblue;
+}
+#subtitle, #nowupdate{
+    font-size: 80%;
+}
+    
+a:link {
+    color: #447888;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #447888;
+}
+
+a:hover {
+    color: #447888;
+    text-decoration: underline;
+}
+a:focus {
+    color: #447888;
+    text-decoration: underline;
+}
+a:active {
+    color: #447888;
+    text-decoration: underline;
+}
+
+
+
