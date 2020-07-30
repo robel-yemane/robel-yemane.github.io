@@ -1,79 +1,81 @@
 body {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    /*"Andale mono",
-  Lucida Console, Courier, monospace; */
-    background-color: #f2f2f2;
-    max-width: 40em;
-    margin: 0 auto;
-    padding: 50px;
-    font-size: 18px;
-    line-height: 1.6em;
-  }
-  
-  h2 {
-    color: darkblue;
-    font-size: 150%;
-    margin: 1.2em 0;
-    font-weight: normal;
-  }
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  /*"Andale mono",
+Lucida Console, Courier, monospace; */
+  background-color: #f2f2f2;
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 50px;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+h2 {
+  color: darkblue;
+  font-size: 150%;
+  margin: 1.2em 0;
+  font-weight: normal;
+}
 #date {
   font-size: 90%;
   font-family: monospace;
   color: #686868;
 }
   
-  #header {
-    font-family: Papyrus;
-    font-size: 150%;
-    color: darkblue;
-    border-bottom: thin dotted #32a1ce;
-    text-align: center;
-  }
-  
-  #menu li {
-    display: inline;
-    padding: 0 10px;
-  }
-  
-  #menu {
-    justify-content: center;
-    margin: 0 auto;
-    display: table;
-  }
-  
-  #content {
-    margin: 30px;
-    line-height: 1.5;
-  }
+header {
+  font-family: Papyrus;
+  font-size: 150%;
+  color: darkblue;
+  border-bottom: thin dotted #32a1ce;
+  text-align: center;
+}
 
- #content li {
+header h1 a {
+  color: darkblue;
+}
+header a:visited {
+  color: darkblue;
+}
+
+#menu li {
+  display: inline;
+  padding: 0 10px;
+}
+
+#menu {
+  justify-content: center;
+  margin: 0 auto;
+  display: table;
+}
+
+section#content {
+  margin: 30px;
+  line-height: 1.5;
+}
+section#content li {
   margin-bottom: 1em;
 }
 
-  #contact li {
-    display: inline;
-    padding: 0 10px;
-  }
+section#contact li {
+  display: inline;
+  padding: 0 10px;
+}
+
+section#contact {
+  /*justify-content:  center;*/
+  margin: 0 auto;
+  display: table;
+}
+
   
-  #contact {
-    /*justify-content:  center;*/
-    margin: 0 auto;
-    display: table;
-  }
-  
-  #header a {
-    color: darkblue;
-  }
-  
-  #subtitle,
-  #nowupdate {
-    font-size: 80%;
-  }
+#subtitle,
+#nowupdate {
+  font-size: 80%;
+}
 
 #articles {
-  list-style: none;
-  padding: 0;
-  
+ list-style: none;
+ padding: 0;
 }
 
   
@@ -102,7 +104,7 @@ body {
   }
   
   @media screen and (max-width: 440px) {
-    div#header h1 {
+    #header h1 {
       font-size: 2em
     }
     body {
@@ -115,7 +117,7 @@ body {
   }
   
   @media screen and (min-width: 440px) {
-    div#header h1 {
+    #header h1 {
       font-size: 2em
     }
     body {
