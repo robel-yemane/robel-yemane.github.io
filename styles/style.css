@@ -16,7 +16,7 @@ h2 {
   margin: 1.2em 0;
   font-weight: normal;
 }
-#date {
+time {
   font-size: 90%;
   font-family: monospace;
   color: #686868;
