@@ -30,13 +30,6 @@ header {
   text-align: center;
 }
 
-header h1 a {
-  color: darkblue;
-}
-header a:visited {
-  color: darkblue;
-}
-
 #menu li {
   display: inline;
   padding: 0 10px;
@@ -67,7 +60,6 @@ section#contact {
   display: table;
 }
 
-  
 #subtitle,
 #nowupdate {
   font-size: 80%;
@@ -78,54 +70,60 @@ section#contact {
  padding: 0;
 }
 
+a:link {
+  color: #447888;
+  text-decoration: none;
+}
   
-  a:link {
-    color: #447888;
-    text-decoration: none;
+a:visited {
+  color: #447888;
+}
+  
+a:hover {
+  color: #447888;
+  text-decoration: underline;
+}
+  
+a:focus {
+  color: #447888;
+  text-decoration: underline;
+}
+  
+a:active {
+  color: #447888;
+  text-decoration: underline;
+}
+
+header h1 a {
+  color: darkblue;
+}
+
+header a:visited {
+  color: darkblue;
+}
+  
+@media screen and (max-width: 440px) {
+  #header h1 {
+    font-size: 2em
   }
-  
-  a:visited {
-    color: #447888;
+  body {
+    padding: 5px;
+    font-size: 17px;
   }
-  
-  a:hover {
-    color: #447888;
-    text-decoration: underline;
+  #contact li {
+    padding: 0 20px;
   }
-  
-  a:focus {
-    color: #447888;
-    text-decoration: underline;
+}
+
+@media screen and (min-width: 440px) {
+  #header h1 {
+    font-size: 2em
   }
-  
-  a:active {
-    color: #447888;
-    text-decoration: underline;
+  body {
+    padding: 5px;
+    font-size: 17px;
   }
-  
-  @media screen and (max-width: 440px) {
-    #header h1 {
-      font-size: 2em
-    }
-    body {
-      padding: 5px;
-      font-size: 17px;
-    }
-    #contact li {
-      padding: 0 20px;
-    }
+  #contact li {
+    padding: 0 20px;
   }
-  
-  @media screen and (min-width: 440px) {
-    #header h1 {
-      font-size: 2em
-    }
-    body {
-      padding: 5px;
-      font-size: 17px;
-    }
-    #contact li {
-      padding: 0 20px;
-    }
-  } 
-  
+} 
