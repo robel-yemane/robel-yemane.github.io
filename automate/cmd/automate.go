@@ -55,15 +55,15 @@ func main() {
 	file, err := os.Open(plainArticle)
 	check(err)
 
-	//TODO: should err be returned from Read and
-	// and handled here?
 	//read file contents
 	articleContent := articlereader.Read(file)
 
-	//write file contents into html file
 	log.Println("Writing html file.")
 
+	// create file
 	file, err = os.Create(htmlContent)
+
+	//write file contents into html file
 	err = articlewriter.Write(boilerPHtml, articleContent, file)
 	check(err)
 	log.Println("Wrote html file.")
