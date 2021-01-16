@@ -48,9 +48,9 @@ func main() {
 		}
 	}
 
-	// TODO: read these from user/stdin
-	plainArticle := "article.txt"
-	htmlContent := "article.html"
+	// TODO: must read these from user/stdin to make it work with Docker!!!
+	plainArticle := "/Users/snowball/Projects/git/robel-yemane.github.io/automate/article.txt"
+	htmlContent := "/Users/snowball/Projects/git/robel-yemane.github.io/automate/article.html"
 
 	file, err := os.Open(plainArticle)
 	check(err)
