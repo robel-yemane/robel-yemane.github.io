@@ -4,9 +4,22 @@ import (
 	"log"
 	"os"
 
+	flag "github.com/spf13/pflag"
 	"robel-yemane.github.io/automate/articlereader"
 	"robel-yemane.github.io/automate/articlewriter"
 )
+
+var srcArticlePath string
+var outHTMLPath string
+
+func init() {
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	flag.StringVarP(&srcArticlePath, "article", "a", "", "[required] Full path to the source article")
+	flag.StringVarP(&outHTMLPath, "htmlOut", "o", path+"/article.html", "Full path to the out html file.")
+}
 
 const boilerPHtml = `
 <!DOCTYPE html>
@@ -42,17 +55,20 @@ const boilerPHtml = `
 
 func main() {
 
+	flag.Parse()
+
+	if srcArticlePath == "" {
+		log.Print("Flag `txtarticle` cannot be empty")
+		os.Exit(1)
+	}
+
 	check := func(err error) {
 		if err != nil {
 			log.Fatal(err)
 		}
 	}
 
-	// TODO: must read these from user/stdin to make it work with Docker!!!
-	plainArticle := "/Users/snowball/Projects/git/robel-yemane.github.io/automate/article.txt"
-	htmlContent := "/Users/snowball/Projects/git/robel-yemane.github.io/automate/article.html"
-
-	file, err := os.Open(plainArticle)
+	file, err := os.Open(srcArticlePath)
 	check(err)
 
 	//read file contents
@@ -61,7 +77,7 @@ func main() {
 	log.Println("Writing html file.")
 
 	// create file
-	file, err = os.Create(htmlContent)
+	file, err = os.Create(outHTMLPath)
 
 	//write file contents into html file
 	err = articlewriter.Write(boilerPHtml, articleContent, file)
