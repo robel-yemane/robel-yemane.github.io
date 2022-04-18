@@ -22,4 +22,4 @@ FROM busybox:glibc
 #WORKDIR /root/
 COPY --from=builder /go/src/github.com/robel-yemane/automate/articlegen /usr/bin/articlegen
 
-CMD ["articlegen"]
+ENTRYPOINT ["articlegen"]
