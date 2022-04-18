@@ -58,7 +58,8 @@ func main() {
 	flag.Parse()
 
 	if srcArticlePath == "" {
-		log.Print("Flag `txtarticle` cannot be empty")
+		log.Println("Source `article` flag must be provided.")
+		flag.PrintDefaults()
 		os.Exit(1)
 	}
 
@@ -78,10 +79,11 @@ func main() {
 
 	// create file
 	file, err = os.Create(outHTMLPath)
-
+	check(err)
 	//write file contents into html file
 	err = articlewriter.Write(boilerPHtml, articleContent, file)
 	check(err)
+
 	log.Println("Wrote html file.")
 
 }
