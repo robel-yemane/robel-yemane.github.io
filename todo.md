@@ -8,4 +8,3 @@
 - [] Add CI (maybe GH actions?)!
 - [] add Makefile
 - [] more tests!!!
-
