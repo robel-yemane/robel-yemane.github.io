@@ -45,11 +45,14 @@ var utimedate = time.Now().Format("2006-01-02")
 var ftimedate = time.Now().Format("2006.01.02")
 
 var htmlLayout = struct {
-	Title  string
-	Header string
-	Udate  string
-	Fdate  string
-	Body   []string
+	Title    string
+	Header   string
+	Udate    string
+	Fdate    string
+	Body     []string
+	Email    string
+	Twitter  string
+	Linkedin string
 }{
 	Title:  "Robel Yemane",
 	Header: "Lorem Ipsum",

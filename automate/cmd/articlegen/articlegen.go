@@ -5,8 +5,8 @@ import (
 	"os"
 
 	flag "github.com/spf13/pflag"
-	"robel-yemane.github.io/automate/articlereader"
-	"robel-yemane.github.io/automate/articlewriter"
+	"robel-yemane.github.io/automate/pkg/articlereader"
+	"robel-yemane.github.io/automate/pkg/articlewriter"
 )
 
 var srcArticlePath string
@@ -45,9 +45,9 @@ const boilerPHtml = `
 		</section>
     	<section id="contact">
       		<ul>
-        		<li><a target="_self" href="https://twitter.com/robelyemane_">twitter</a></li>
-        		<li><a target="_self" href="mailto:ryhgb03@gmail.com">e-mail</a></li>
-        		<li><a target="_self" href="https://www.linkedin.com/in/ryemane/">linkedin</a></li>
+        		<li><a target="_self" href="{{.Twitter}}">twitter</a></li>
+        		<li><a target="_self" href="mailto:{{.Email}}">e-mail</a></li>
+        		<li><a target="_self" href="{{.Linkedin}}">linkedin</a></li>
       		</ul>
     	</section>
     </body>
@@ -84,14 +84,6 @@ func main() {
 	err = articlewriter.Write(boilerPHtml, articleContent, file)
 	check(err)
 
-	log.Println("Wrote html file.")
+	log.Printf("Wrote html file: [%s]", outHTMLPath)
 
 }
-
-//TODO:
-/*
-	- read items from file
-	- loops through contact section
-	- write tests!!!!
-	- github action wire!
-*/
