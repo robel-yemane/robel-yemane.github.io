@@ -18,7 +18,7 @@ func TestRead(t *testing.T) {
 		t.Fatal("\t\tShould be able to read the contents of the file.", ballotX, content)
 	}
 	t.Log("\t\tShould be able to read the contents of the file.", checkMark)
-	paragraphs := len(content)
+	paragraphs := len(content.Body)
 	lineNum := 3
 	if paragraphs == lineNum {
 		t.Logf("\t\tFile should have %d lines. %v", lineNum, checkMark)
@@ -27,8 +27,8 @@ func TestRead(t *testing.T) {
 	}
 	articleParagraphs := strings.Split(article, "\n")
 
-	if strings.Trim(content[1], "\n") != strings.Trim(articleParagraphs[1], "\n") {
-		t.Errorf("\t\t First paragraph read should be\n%v\n - Found: \n%v\n", content[1], articleParagraphs[1])
+	if strings.Trim(content.Body[1], "\n") != strings.Trim(articleParagraphs[1], "\n") {
+		t.Errorf("\t\t First paragraph read should be\n%v\n - Found: \n%v\n", content.Body[1], articleParagraphs[1])
 	}
 
 }
