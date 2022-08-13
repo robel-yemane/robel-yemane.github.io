@@ -81,7 +81,7 @@ func main() {
 	file, err = os.Create(outHTMLPath)
 	check(err)
 	//write file contents into html file
-	err = articlewriter.Write(boilerPHtml, articleContent, file)
+	err = articlewriter.Write(boilerPHtml, *articleContent, file)
 	check(err)
 
 	log.Printf("Wrote html file: [%s]", outHTMLPath)

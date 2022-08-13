@@ -7,9 +7,11 @@ import (
 	"time"
 
 	"golang.org/x/net/html"
+	"robel-yemane.github.io/automate/pkg/types"
 )
 
 var body = []string{"Lorem ipsum dolor sit amet,", "consectetur adipiscing elit."}
+var articletext = types.ArticleText{Title: "This is the title", Body: body}
 
 const boilerPHTML = `
 <!DOCTYPE html>
@@ -55,17 +57,17 @@ var htmlLayout = struct {
 	Linkedin string
 }{
 	Title:  "Robel Yemane",
-	Header: "Lorem Ipsum",
+	Header: articletext.Title,
 	Udate:  utimedate,
 	Fdate:  ftimedate,
-	Body:   body,
+	Body:   articletext.Body,
 }
 
 // https://pkg.go.dev/golang.org/x/net/html
 func TestWrite(t *testing.T) {
 
 	var bufWriter bytes.Buffer //=> has Read and Write method
-	err := Write(boilerPHTML, body, &bufWriter)
+	err := Write(boilerPHTML, articletext, &bufWriter)
 
 	if err != nil {
 		t.Fatal("Could not Write html output", err)
