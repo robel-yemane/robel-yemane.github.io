@@ -5,5 +5,6 @@
 - [ ] make Docker image great again! 
 - [?] loops through contact section
 - [ ] add CI (maybe GH actions?)!
-- [ ] add Makefile
+- [ ] add Makefile {https://makefiletutorial.com/#makefile-cookbook,
+      https://github.com/robel-yemane/go-build-template/blob/master/Makefile}
 - [ ] more tests!!!
