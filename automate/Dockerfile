@@ -1,4 +1,4 @@
-FROM golang:1.15 AS builder
+FROM golang:1.21 AS builder
 
 WORKDIR /go/src/github.com/robel-yemane/automate
 
@@ -8,8 +8,7 @@ COPY go.sum .
 RUN go mod download
 
 COPY cmd/ cmd
-COPY articlewriter/ articlewriter
-COPY articlereader/ articlereader
+COPY pkg/ pkg
 
 RUN go test ./... -cover
 

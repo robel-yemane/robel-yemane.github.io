@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"path/filepath"
 
 	flag "github.com/spf13/pflag"
 	"robel-yemane.github.io/automate/pkg/articlereader"
@@ -21,37 +22,6 @@ func init() {
 	flag.StringVarP(&outHTMLPath, "htmlOut", "o", path+"/article.html", "Full path to the out html file.")
 }
 
-const boilerPHtml = `
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-		<title>{{.Title}}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="../styles/style.css"> 
-    </head>
-	<body>
-		<header>
-			<h1><a target="_self" href="../index.html">{{.Title}}</a></h1>
-  		</header>
-		<section id="content">
-		<h2>{{.Header}}</h2>
-		<time datetime="{{.Udate}}">{{.Fdate}}</time>	  
-		{{ range .Body -}}
-		<p>
-		 {{ . }}
-		</p>
-		{{ end -}}
-		</section>
-    	<section id="contact">
-      		<ul>
-        		<li><a target="_self" href="{{.Twitter}}">twitter</a></li>
-        		<li><a target="_self" href="mailto:{{.Email}}">e-mail</a></li>
-        		<li><a target="_self" href="{{.Linkedin}}">linkedin</a></li>
-      		</ul>
-    	</section>
-    </body>
-</html>`
 
 func main() {
 
@@ -81,7 +51,8 @@ func main() {
 	file, err = os.Create(outHTMLPath)
 	check(err)
 	//write file contents into html file
-	err = articlewriter.Write(boilerPHtml, *articleContent, file)
+	tmplPath := filepath.Join(filepath.Dir(filepath.Dir(os.Args[0])), "templates", "article.html")
+	err = articlewriter.WriteFromTemplate(tmplPath, *articleContent, file)
 	check(err)
 
 	log.Printf("Wrote html file: [%s]", outHTMLPath)
