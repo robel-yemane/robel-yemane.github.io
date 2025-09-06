@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"os"
-	"path/filepath"
 
 	flag "github.com/spf13/pflag"
 	"robel-yemane.github.io/automate/pkg/articlereader"
@@ -51,7 +50,7 @@ func main() {
 	file, err = os.Create(outHTMLPath)
 	check(err)
 	//write file contents into html file
-	tmplPath := filepath.Join(filepath.Dir(filepath.Dir(os.Args[0])), "templates", "article.html")
+	tmplPath := "templates/article.html"
 	err = articlewriter.WriteFromTemplate(tmplPath, *articleContent, file)
 	check(err)
 
