@@ -12,6 +12,7 @@ import (
 
 var body = []string{"Lorem ipsum dolor sit amet,", "consectetur adipiscing elit."}
 var articletext = types.ArticleText{Title: "This is the title", Body: body}
+var contact = types.Contact{Email: "test@example.com", Twitter: "https://twitter.com/test", Linkedin: "https://linkedin.com/in/test"}
 
 const boilerPHTML = `
 <!DOCTYPE html>
@@ -65,10 +66,13 @@ var htmlLayout = struct {
 
 // https://pkg.go.dev/golang.org/x/net/html
 func TestWrite(t *testing.T) {
+	tmpl, err := ParseTemplate(boilerPHTML)
+	if err != nil {
+		t.Fatalf("ParseTemplate failed: %v", err)
+	}
 
-	var bufWriter bytes.Buffer //=> has Read and Write method
-	err := Write(boilerPHTML, articletext, &bufWriter)
-
+	var bufWriter bytes.Buffer
+	err = Write(tmpl, articletext, contact, &bufWriter)
 	if err != nil {
 		t.Fatal("Could not Write html output", err)
 	}
