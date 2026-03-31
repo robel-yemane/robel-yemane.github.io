@@ -13,7 +13,10 @@ func TestRead(t *testing.T) {
 	stringReader := strings.NewReader(article)
 	t.Log("\tGiven the need to test reading paragraphs.")
 
-	content := Read(stringReader)
+	content, err := Read(stringReader)
+	if err != nil {
+		t.Fatal("\t\tShould be able to read the contents of the file.", ballotX, err)
+	}
 	if content == nil {
 		t.Fatal("\t\tShould be able to read the contents of the file.", ballotX, content)
 	}
@@ -30,5 +33,18 @@ func TestRead(t *testing.T) {
 	if strings.Trim(content.Body[1], "\n") != strings.Trim(articleParagraphs[1], "\n") {
 		t.Errorf("\t\t First paragraph read should be\n%v\n - Found: \n%v\n", content.Body[1], articleParagraphs[1])
 	}
+}
 
+func TestReadTitle(t *testing.T) {
+	article := "Title: My Great Article\nFirst paragraph.\nSecond paragraph.\n"
+	content, err := Read(strings.NewReader(article))
+	if err != nil {
+		t.Fatalf("Read returned unexpected error: %v", err)
+	}
+	if content.Title != "My Great Article" {
+		t.Errorf("expected title %q, got %q", "My Great Article", content.Title)
+	}
+	if len(content.Body) != 2 {
+		t.Errorf("expected 2 body lines, got %d", len(content.Body))
+	}
 }

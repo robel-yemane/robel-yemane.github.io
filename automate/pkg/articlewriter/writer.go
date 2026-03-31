@@ -8,17 +8,14 @@ import (
 	"robel-yemane.github.io/automate/pkg/types"
 )
 
-var email = "ryhgb03@gmail.com"
-var twitter = "https://twitter.com/robelyemane_"
-var linkedin = "https://www.linkedin.com/in/ryemane/"
+// ParseTemplate parses the HTML skeleton once and returns a ready-to-use template.
+func ParseTemplate(htmlSkeleton string) (*template.Template, error) {
+	return template.New("blog").Parse(htmlSkeleton)
+}
 
-// Write writes html formatted data into a file
-func Write(htmlSkeleton string, data types.ArticleText, w io.Writer) error {
-
-	// Parse a time value from a string in the standard Unix format.
+// Write executes the pre-parsed template with article data and contact info.
+func Write(tmpl *template.Template, data types.ArticleText, contact types.Contact, w io.Writer) error {
 	utime := time.Now()
-	utimedate := utime.Format("2006-01-02")
-	ftimedate := utime.Format("2006.01.02")
 
 	htmlLayout := struct {
 		Title    string
@@ -32,16 +29,13 @@ func Write(htmlSkeleton string, data types.ArticleText, w io.Writer) error {
 	}{
 		Title:    "Robel Yemane",
 		Header:   data.Title,
-		Udate:    utimedate,
-		Fdate:    ftimedate,
+		Udate:    utime.Format("2006-01-02"),
+		Fdate:    utime.Format("2006.01.02"),
 		Body:     data.Body,
-		Email:    email,
-		Twitter:  twitter,
-		Linkedin: linkedin,
+		Email:    contact.Email,
+		Twitter:  contact.Twitter,
+		Linkedin: contact.Linkedin,
 	}
-	t, err := template.New("blog").Parse(htmlSkeleton)
-	if err != nil {
-		return err
-	}
-	return t.Execute(w, htmlLayout)
+
+	return tmpl.Execute(w, htmlLayout)
 }

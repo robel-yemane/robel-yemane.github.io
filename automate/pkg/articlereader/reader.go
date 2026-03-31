@@ -2,47 +2,44 @@ package articlereader
 
 import (
 	"bufio"
-
+	"fmt"
 	"io"
-	"log"
 	"strings"
 
 	"robel-yemane.github.io/automate/pkg/types"
 )
 
-// Read reads paragraphs of text and returns the data read
-// in a slice of strings
-func Read(r io.Reader) *types.ArticleText {
+// Read reads paragraphs of text and returns the data read in a slice of strings.
+func Read(r io.Reader) (*types.ArticleText, error) {
 
-	articleContent := []string{}
+	var articleContent []string
 	var title string
 
 	reader := bufio.NewReader(r)
 	for {
 		bytesRead, err := reader.ReadBytes('\n')
+		line := string(bytesRead)
 
-		if strings.Contains(string(bytesRead), "Title:") {
-			titleRunes := []rune(string(bytesRead))
-
-			title = string(titleRunes[6:]) // fetch the title and convert it back to string
-			continue                       //TODO: is there a better alternative to skipping processing the first line after the first run?
+		if _, after, found := strings.Cut(line, "Title:"); found {
+			title = strings.TrimSpace(after)
+			if err == io.EOF {
+				break
+			}
+			continue
 		}
 
 		if err == io.EOF {
 			break
 		}
 		if err != nil {
-			log.Fatal(err)
+			return nil, fmt.Errorf("reading article: %w", err)
 		}
-		if string(bytesRead) == "\n" {
+		if line == "\n" {
 			continue
 		}
-		// trim the '\n' returned from ReadBytes()
-		articleContent = append(articleContent, strings.TrimSuffix(string(bytesRead), "\n"))
 
+		articleContent = append(articleContent, strings.TrimSuffix(line, "\n"))
 	}
 
-	a := types.ArticleText{Title: title, Body: articleContent}
-
-	return &a
+	return &types.ArticleText{Title: title, Body: articleContent}, nil
 }
